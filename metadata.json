@@ -1,16 +1,21 @@
 {
-  "title": "Kambaata LLM Cultural Hallucination Benchmark",
+  "title": "Kambaata LLM Cultural Benchmark",
+  "version": "1.0.0",
   "author": "Behailu Berhanu",
-  "year": 2026,
-  "version": "0.1 reproducibility package",
+  "date": "2026-08-14",
   "benchmark_items": 77,
-  "raw_responses": 308,
+  "responses": 308,
+  "scored_responses": 308,
   "models": [
-    "GPT-5.6 Luna",
-    "Gemini 3.6 Flash",
-    "Claude Sonnet 5",
-    "DeepSeek-V3"
+    "ChatGPT (GPT-5.6 Luna)",
+    "Gemini (Gemini 3.6 Flash)",
+    "Claude (Claude Sonnet 5)",
+    "DeepSeek (DeepSeek-V3)"
   ],
-  "collection_dates": "2026-08-10 to 2026-08-11",
-  "status": "Preparation package; final row-level annotations must be supplied before claiming full reproducibility."
+  "collection_dates": [
+    "2026-08-10",
+    "2026-08-11"
+  ],
+  "repository": "https://github.com/BehailuBerhanu/kambaata-llm-cultural-benchmark",
+  "paper": "paper/when-ai-doesnt-know-kembata.pdf"
 }

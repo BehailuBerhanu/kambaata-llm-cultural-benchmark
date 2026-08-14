@@ -1,0 +1,14 @@
+{
+  "benchmark_items": 77,
+  "raw_responses": 308,
+  "scored_responses": 308,
+  "models": {
+    "ChatGPT": 77,
+    "Gemini": 77,
+    "Claude": 77,
+    "DeepSeek": 77
+  },
+  "all_required_scores_complete": true,
+  "duplicate_item_model_rows": 0,
+  "unique_items": 77
+}

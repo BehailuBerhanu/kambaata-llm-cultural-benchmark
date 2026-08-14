@@ -1,55 +1,99 @@
-# Kambaata LLM Cultural Hallucination Benchmark — Reproducibility Package v0.1
+# Kambaata LLM Cultural Benchmark
 
-Author: Behailu Berhanu
-Study: *When AI Doesn't Know Kembata*
-Benchmark: 77 manually verified questions × 4 models = 308 raw responses
+**When AI Doesn't Know Kembata: Hallucination, cultural substitution, and uncertainty in four general-purpose language models answering questions about an under-documented Ethiopian culture**
 
-## What is included
+Author: **Behailu Berhanu**  
+Version: **1.0 candidate — consistency review pending**  
+Benchmark: **77 manually verified questions × 4 models = 308 responses**  
+Collection: **10–11 August 2026**
 
-- `benchmark_items.csv` — the 77-item Item Bank extracted from the original workbook.
-- `raw_responses_and_existing_annotations.csv` — all 308 raw response rows currently present in the source workbook, plus whatever annotations are actually present there.
-- `annotation_template.csv` — a clean scoring sheet matching the published rubric.
-- `SCORING_RUBRIC.md` — scoring definitions used by the paper.
-- `analysis.py` — reproducible descriptive analysis that refuses to run if final annotations are missing.
-- `source_audit.json` — machine-readable audit of what was actually present in the source workbook.
-- `source_workbook_original.xlsx` — the original workbook used as the extraction source.
+## What this repository contains
 
-## Critical reproducibility note
+This repository is the reproducibility package for the Kambaata LLM Cultural Hallucination Benchmark.
 
-The current published paper states that all 308 responses were human-finalized and that the complete benchmark workbook contains all four finalized scores for all 308 rows.
+The benchmark evaluates four general-purpose language models on fine-grained Kambaata cultural knowledge across 21 domains. Each response was scored on:
 
-The workbook currently available in this package contains all 308 raw responses, but only **2 of the 308 rows have populated scoring fields** in the source file. Therefore this package **does not pretend that the incomplete workbook is the final scored dataset**.
+1. Accuracy (0–4)
+2. Fabrication (None / Minor / Severe)
+3. Narrative Substitution (0–3)
+4. Geography Conflation (Y/N)
 
-Before public release, replace the annotation data with the actual final human-finalized 308-row scoring workbook and save it as:
+The accompanying paper describes the methodology, findings, limitations, and implications.
 
-`annotation_final.csv`
+## Repository structure
 
-Then run:
+```text
+.
+├── README.md
+├── CITATION.cff
+├── LICENSE-MIT
+├── DATA-LICENSE-CC-BY-4.0.md
+├── SCORING_RUBRIC.md
+├── analysis.py
+├── requirements.txt
+│
+├── data/
+│   ├── benchmark_items.csv
+│   ├── ground_truth.csv
+│   ├── raw_responses.csv
+│   └── annotations.csv
+│
+├── paper/
+│   └── when-ai-doesnt-know-kembata.pdf
+│
+├── results/
+│   ├── recomputed_model_summary.csv
+│   ├── pairwise_wilcoxon.csv
+│   └── audit.json
+│
+└── archive/
+    └── source_workbook_scored.xlsx
+```
 
-`python analysis.py`
+## Reproduce the main analysis
 
-The script checks that there are exactly 308 rows and exactly 77 rows for each of ChatGPT, Gemini, Claude, and DeepSeek. It will stop rather than silently filling missing values.
+Install dependencies:
 
-## Study configuration
+```bash
+pip install -r requirements.txt
+```
 
-Models:
-- OpenAI — GPT-5.6 Luna
-- Google — Gemini 3.6 Flash
-- Anthropic — Claude Sonnet 5
-- DeepSeek — DeepSeek-V3
+Run:
 
-Collection:
-- 10–11 August 2026
-- English prompts
-- vendor-default sampling
-- one response per item/model
-- no few-shot examples
-- no additional system instructions
+```bash
+python analysis.py
+```
 
-## Dataset structure
+The script checks the dataset structure before analysis. It expects exactly 77 items and 308 scored item/model rows, with 77 responses for each model.
 
-Each benchmark item contains a question, domain, fixed ground truth, source, and page reference. Each model response is associated with an item ID and model. The published scoring dimensions are Accuracy, Fabrication, Narrative Substitution, and Geography Conflation.
+## Data provenance
 
-## Reproducibility principle
+The benchmark item bank was fixed before model querying. Ground truth was documented against the study's documentary source set and community knowledge. Raw model responses are preserved verbatim in `data/raw_responses.csv`; final annotations are in `data/annotations.csv`.
 
-Never reconstruct row-level annotations from aggregate percentages in the paper. The final row-level scores must come from the actual human-finalized scoring workbook.
+The archived Excel workbook is retained under `archive/` as the source workbook used to construct this release.
+
+## Important limitations
+
+- All prompts were administered in English.
+- Each model answered each item once.
+- The tested model versions and vendor interfaces are time-specific.
+- A single community-member annotator finalized the scores, so inter-annotator reliability could not be calculated.
+- The benchmark is a focused cultural knowledge evaluation, not a general ranking of model intelligence or overall factuality.
+- Results should not be generalized to all model versions or all under-documented cultures.
+
+## Citation
+
+If you use this benchmark, please cite the paper and the repository release. The `CITATION.cff` file contains machine-readable citation metadata.
+
+## Data and code licensing
+
+The analysis code is released under the MIT License.
+
+The benchmark data are released under CC BY 4.0, subject to applicable third-party rights and model-provider terms. See the data license file for details.
+
+## Contact
+
+**Behailu Berhanu**
+
+
+> **Release status:** This package is a candidate build. See `CONSISTENCY_AUDIT.md` before publishing or minting a DOI.

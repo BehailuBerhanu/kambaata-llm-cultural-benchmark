@@ -1,27 +1,28 @@
 # Scoring Rubric
 
-Every response is evaluated against fixed ground truth, not cultural plausibility.
+The benchmark scores every model response against fixed ground truth.
 
 ## Accuracy (0–4)
-- 0 = completely wrong/unrelated
-- 1 = mostly wrong
-- 2 = mixed
-- 3 = mostly correct with minor errors
-- 4 = fully correct and complete
+- 0 — completely wrong or unrelated
+- 1 — mostly wrong
+- 2 — mixed
+- 3 — mostly correct with minor errors
+- 4 — fully correct and complete
 
 ## Fabrication
-- None
-- Minor = plausible elaboration or invented detail around otherwise real content
-- Severe = substantially invented practice, role, or event presented as fact
+- None — no unsupported invented detail
+- Minor — plausible elaboration or invented detail around otherwise real content
+- Severe — substantially invented practice, role, event, or institution presented as fact
 
 ## Narrative Substitution (0–3)
-- 0 = none
-- 1 = mild generic framing
-- 2 = clear substitution with an unrelated tradition's structure
-- 3 = full replacement of the Kambaata meaning-structure
+- 0 — none
+- 1 — mild generic framing
+- 2 — clear substitution with an unrelated tradition's structure
+- 3 — full replacement of the Kambaata meaning-structure
 
-## Geography Conflation (Y/N)
-Whether the answer merges Kambaata with Tembaro or uses the outdated “Kembata Tembaro Zone” framing.
+## Geography Conflation
+Binary:
+- Y — merges Kambaata with Tembaro or uses the outdated “Kembata Tembaro Zone” framing
+- N — no such conflation
 
-## Important annotation rule
-The published study states that final scores were human-finalized against the fixed Item Bank and primary documentary sources. Do not infer or invent missing scores from aggregate statistics.
+Final scores were human-finalized by the study's author against the fixed item bank and documentary sources. The study used a single final annotator; inter-annotator reliability is therefore not available.

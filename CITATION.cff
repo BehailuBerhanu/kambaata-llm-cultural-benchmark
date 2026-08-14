@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Kambaata LLM Cultural Benchmark"
+message: "If you use this benchmark or repository, please cite the associated paper and this release."
+type: dataset
+authors:
+  - family-names: "Berhanu"
+    given-names: "Behailu"
+    orcid: ""
+version: "1.0.0"
+date-released: "2026-08-14"
+repository-code: "https://github.com/BehailuBerhanu/kambaata-llm-cultural-benchmark"
+license: "CC-BY-4.0"
+keywords:
+  - Kambaata
+  - Kembata
+  - large language models
+  - hallucination
+  - cultural knowledge
+  - AI evaluation
+  - low-resource languages
