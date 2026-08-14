@@ -1,0 +1,16 @@
+{
+  "title": "Kambaata LLM Cultural Hallucination Benchmark",
+  "author": "Behailu Berhanu",
+  "year": 2026,
+  "version": "0.1 reproducibility package",
+  "benchmark_items": 77,
+  "raw_responses": 308,
+  "models": [
+    "GPT-5.6 Luna",
+    "Gemini 3.6 Flash",
+    "Claude Sonnet 5",
+    "DeepSeek-V3"
+  ],
+  "collection_dates": "2026-08-10 to 2026-08-11",
+  "status": "Preparation package; final row-level annotations must be supplied before claiming full reproducibility."
+}

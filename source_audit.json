@@ -1,0 +1,9 @@
+{
+  "item_count": 77,
+  "response_count": 308,
+  "raw_responses_present": 308,
+  "Accuracy_0_4": 2,
+  "Fabrication_None_Minor_Severe": 2,
+  "Narrative_Substitution_0_3": 2,
+  "Geography_Conflation_Y_N": 2
+}
